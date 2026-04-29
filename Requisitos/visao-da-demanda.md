@@ -10,7 +10,7 @@
 
 ## 1. Objetivo
 
-
+<img src="image/logo_projeto_GAC.png" width="20%">
 
 Este documento visa definir a proposta de valor da demanda da plataforma GAC (Gestão de Ativos CCT), que visa melhorar o controle e a rastreabilidade de ativos físicos, substituindo processos manuais e descentralizados por uma solução digital integrada.
 

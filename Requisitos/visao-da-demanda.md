@@ -45,80 +45,102 @@ A plataforma GAC surge como solução para digitalizar esse processo, permitindo
 
 ## 4. Partes Interessadas
 
-| Nome | Papel | Responsabilidades | Representante |
-|------|------|-----------------|--------------|
-| Direção do CCT | Cliente | Garantir controle patrimonial | - |
-| Coordenação/Administração | Stakeholder | Gerenciar processos e padronização | - |
-| Professores | Usuário final | Solicitar e utilizar ativos | - |
-| Atendentes | Usuário operacional | Registrar movimentações | - |
-| Equipe de TI | Desenvolvimento | Implementar e manter o sistema | - |
+| Nome | Papel | Responsabilidades | Representante | Nível de Influência |
+|------|------|-----------------|--------------|---------------------|
+| Direção do CCT | Cliente | Garantir controle patrimonial | - | Alto |
+| Coordenação/Administração | Stakeholder | Gerenciar processos | - | Alto |
+| Professores | Usuário final | Utilizar ativos | - | Médio |
+| Atendentes | Usuário operacional | Registrar movimentações | - | Alto |
+| Equipe de TI | Desenvolvimento | Implementar sistema | - | Médio |
 
 ---
 
 ## 5. Personas
 
-Descreva perfis típicos dos usuários ou sistemas que interagem com a solução.
+### 5.1 Professor Solicitante
 
-**Exemplo:**
+- **Descrição:** Professor que necessita utilizar equipamentos para atividades acadêmicas.
+- **Objetivo:** Localizar e retirar ativos de forma rápida e confiável.
 
-### 5.1. Aluno
+### 5.2 Atendente Validador
 
-- **Descrição:** Estudante de graduação que busca estágio obrigatório.
-- **Objetivo:** Conseguir estágio e acompanhar o processo online.
+- **Descrição:** Responsável pelo registro e controle da movimentação dos ativos.
+- **Objetivo:** Garantir que todas as movimentações sejam registradas corretamente.
 
-### 5.2. Professor Orientador
+### 5.3 Administrador de Inventário
 
-- **Descrição:** Docente responsável por aprovar relatórios de estágio.
+- **Descrição:** Responsável pela gestão geral dos ativos.
+- **Objetivo:** Manter a base de dados atualizada e confiável, além de gerar relatórios.
+
+---
 
 ## 6. Necessidades e Funcionalidades
 
-Relacione as necessidades e funcionalidades, detalhando para cada uma os atores, frequência e valor.
+### Necessidade 1: Controle de movimentação de ativos
 
-**Exemplo:**
+#### F1.1 Registro de retirada de ativo
 
-### Necessidade 1: Solicitar estágio
-
-#### F1.1 Cadastro de solicitação de estágio
-
-- **Descrição:** Permite ao aluno cadastrar uma nova solicitação de estágio.
+- **Descrição:** Permite registrar a retirada de um ativo por um usuário.
 - **Incluída**
-- **Atores:** Aluno
+- **Atores:** Atendente
 - **Frequência:** Alta
 - **Valor:** Alto
 
-### Necessidade 2: Aprovar relatório
+#### F1.2 Registro de devolução de ativo
 
-#### F2.1 Aprovação de relatório de estágio
-
-- **Descrição:** Permite ao professor aprovar ou rejeitar relatórios enviados.
+- **Descrição:** Permite registrar a devolução e estado do ativo.
 - **Incluída**
-- **Atores:** Professor Orientador
+- **Atores:** Atendente
+- **Frequência:** Alta
+- **Valor:** Alto
+
+---
+
+### Necessidade 2: Rastreabilidade e histórico
+
+#### F2.1 Consulta de histórico de ativos
+
+- **Descrição:** Permite visualizar todo o histórico de uso de um ativo.
+- **Incluída**
+- **Atores:** Administrador
 - **Frequência:** Média
 - **Valor:** Alto
 
+---
+
+### Necessidade 3: Gestão e auditoria
+
+#### F3.1 Geração de relatórios
+
+- **Descrição:** Geração de relatórios para controle e auditoria.
+- **Incluída**
+- **Atores:** Administrador
+- **Frequência:** Média
+- **Valor:** Alto
+
+---
+
 ## 7. Arquitetura da Demanda
 
-Inclua um diagrama simples (pode ser desenhado à mão e digitalizado, ou feito em ferramenta online) mostrando os principais componentes e integrações.
+O sistema será composto por uma plataforma web centralizada, acessada por diferentes perfis de usuários (professores, atendentes e administradores).
 
-**Exemplo:**
+A aplicação contará com:
 
-> O sistema será composto por três módulos principais: Portal do Aluno, Portal do Professor e Módulo Administrativo. Integração com sistema acadêmico via API REST.
-
-Sugestão: utilize mapas de histórias ou diagramas de caso de uso (UML) para ilustrar.
+- Interface para registro e consulta de ativos
+- Backend responsável pelo processamento e armazenamento de dados
+- Banco de dados centralizado para garantir integridade e histórico
 
 ---
 
 ## Checklist de Validação do Documento de Visão
 
-- [ ] O objetivo está claro e alinhado ao problema/necessidade?
-- [ ] A proposta de valor é mensurável e relevante?
-- [ ] Todas as partes interessadas estão listadas com papéis definidos?
-- [ ] Existem pelo menos duas personas descritas?
-- [ ] Todas as necessidades e funcionalidades estão relacionadas a atores?
-- [ ] Há indicação de valor e frequência para cada funcionalidade?
-- [ ] A arquitetura está ilustrada (mesmo que de forma simples)?
-- [ ] O documento está escrito em linguagem clara e objetiva?
+- [x] O objetivo está claro e alinhado ao problema/necessidade
+- [x] A proposta de valor é relevante
+- [x] As partes interessadas estão identificadas
+- [x] Existem personas descritas
+- [x] Funcionalidades relacionadas a atores
+- [x] Valor e frequência definidos
+- [ ] Arquitetura ilustrada (opcional adicionar diagrama)
+- [x] Linguagem clara e objetiva
 
 ---
-
-> Consulte exemplos e dicas em: [Guia de Elaboração da Visão](../../../Elicitacao/VisaoDemanda.md)

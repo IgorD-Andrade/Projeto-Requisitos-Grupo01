@@ -48,10 +48,10 @@ A plataforma GAC surge como solução para digitalizar esse processo, permitindo
 
 | Nome | Papel | Responsabilidades | Representante | Nível de Influência |
 |------|------|-----------------|--------------|---------------------|
-| Direção do CCT | Cliente | Garantir controle patrimonial | - | Alto |
-| Coordenação/Administração | Stakeholder | Gerenciar processos | - | Alto |
-| Professores | Usuário final | Utilizar ativos | - | Médio |
-| Atendentes | Usuário operacional | Registrar movimentações | - | Alto |
+| Direção do CCT | Cliente | Garantir controle patrimonial | Jakson | Alto |
+| Coordenação/Administração | Stakeholder | Gerenciar processos | Fabiana | Alto |
+| Professores | Usuário final | Utilizar ativos | Marcelo Bezerra | Médio |
+| Atendentes | Usuário operacional | Registrar movimentações | Kildery | Alto |
 | Equipe de TI | Desenvolvimento | Implementar sistema | - | Médio |
 
 ---

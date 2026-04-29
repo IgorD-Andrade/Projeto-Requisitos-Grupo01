@@ -52,7 +52,7 @@ A plataforma GAC surge como solução para digitalizar esse processo, permitindo
 | Coordenação/Administração | Stakeholder | Gerenciar processos | Fabiana | Alto |
 | Professores | Usuário final | Utilizar ativos | Marcelo Bezerra | Médio |
 | Atendentes | Usuário operacional | Registrar movimentações | Kildery | Alto |
-| Equipe de TI | Desenvolvimento | Implementar sistema | - | Médio |
+| Equipe de TI | Desenvolvimento | Implementar sistema | Grupo01 | Médio |
 
 ---
 

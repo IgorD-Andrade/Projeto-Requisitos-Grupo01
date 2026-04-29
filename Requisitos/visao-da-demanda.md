@@ -1,56 +1,59 @@
 # Visão da Demanda (VD)
 
-> **Orientação:**
->
-> 1. Copie este template para cada nova demanda/projeto.
-> 2. Preencha cada seção com informações claras, objetivas e sem jargões técnicos desnecessários.
-> 3. Consulte o [guia de elaboração](../../../Elicitacao/VisaoDemanda.md) para dicas e exemplos.
-> 4. Use artefatos visuais (mapa de histórias, diagrama de caso de uso) sempre que possível.
-
 ## Histórico de Versões
 
 | Data | Versão | Descrição | Autor |
 | --- | --- | --- | --- |
-| dd/mm/aaaa | x.x | identificar a demanda e uma descrição sumária do que ocasionou a criação/mudança do artefato | nome do autor |
-|  |  |  |  |
-|  |  |  |  |
+| 29/04/2026 | 1.0 | Criação inicial do documento de visão da demanda do sistema GAC | João Pedro |
+
+---
 
 ## 1. Objetivo
 
-Descreva de forma sucinta o propósito do projeto/demanda.
 
-**Exemplo:**
 
-> Este documento visa definir a proposta de valor da demanda "Portal de Estágios", detalhando as necessidades dos alunos, professores e setor administrativo.
+Este documento visa definir a proposta de valor da demanda da plataforma GAC (Gestão de Ativos CCT), que visa melhorar o controle e a rastreabilidade de ativos físicos, substituindo processos manuais e descentralizados por uma solução digital integrada.
+
+---
 
 ## 2. Proposta de Valor
 
-Explique os benefícios que a solução trará para o cliente/usuário.
+A solução permitirá:
 
-**Exemplo:**
+- Redução de erros causados por registros manuais
+- Rastreabilidade em tempo real dos ativos
+- Maior responsabilização através de registros auditáveis
+- Centralização das informações em uma única base de dados
+- Melhoria na tomada de decisão por meio de relatórios e métricas
 
-> A solução permitirá que alunos solicitem estágios online, reduzindo o tempo de aprovação de 10 para 2 dias e eliminando processos em papel.
+---
 
 ## 3. Descrição da Demanda
 
-Apresente um resumo do problema, contexto e principais funcionalidades.
+Atualmente, o controle de ativos é realizado de forma manual e com comunicação informal, o que gera inconsistências, perda de informações e falta de rastreabilidade.
 
-**Exemplo:**
+Esse cenário dificulta responder perguntas como:
+- Onde está o item?
+- Quem utilizou?
+- Qual o estado atual do equipamento?
 
-> O sistema permitirá cadastro de vagas, inscrição de alunos, acompanhamento de estágios e geração de relatórios para o setor administrativo.
+Além disso, há fragilidade na responsabilização e ausência de histórico confiável.
+
+A plataforma GAC surge como solução para digitalizar esse processo, permitindo o rastreamento completo do ciclo de vida dos ativos, desde sua retirada até sua devolução.
+
+---
 
 ## 4. Partes Interessadas
 
-Liste todos os envolvidos, seus papéis e responsabilidades.
+| Nome | Papel | Responsabilidades | Representante |
+|------|------|-----------------|--------------|
+| Direção do CCT | Cliente | Garantir controle patrimonial | - |
+| Coordenação/Administração | Stakeholder | Gerenciar processos e padronização | - |
+| Professores | Usuário final | Solicitar e utilizar ativos | - |
+| Atendentes | Usuário operacional | Registrar movimentações | - |
+| Equipe de TI | Desenvolvimento | Implementar e manter o sistema | - |
 
-**Exemplo:**
-
-| Nome                 | Papel           | Responsabilidades                   | Representante    |
-| -------------------- | --------------- | ----------------------------------- | ---------------- |
-| Setor de Estágios   | Cliente         | Aprovar vagas, acompanhar estágios | Maria Souza      |
-| Aluno                | Usuário final  | Solicitar e acompanhar estágio     | -                |
-| Professor Orientador | Stakeholder     | Avaliar e aprovar relatórios       | Prof. João Lima |
-| Equipe de TI         | Desenvolvimento | Implementar e manter o sistema      | Equipe Lapis     |
+---
 
 ## 5. Personas
 

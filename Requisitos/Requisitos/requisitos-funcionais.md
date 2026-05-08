@@ -1,13 +1,5 @@
 # Requisitos Funcionais
 
-## Histórico de Versões
-
-| Data | Versão | Descrição | Autor |
-| --- | --- | --- | --- |
-| 08/05/2026 | 1.0 | Criação inicial do documento de requisitos funcionais do sistema GAC | João Pedro |
-
----
-
 ## 1. Introdução
 
 Este documento apresenta os requisitos funcionais da plataforma GAC (Gestão de Ativos CCT), responsável pelo controle, rastreamento e gerenciamento de projetores através de identificação digital por tags NFC/RFID.

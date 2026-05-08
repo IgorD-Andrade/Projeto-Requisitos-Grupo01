@@ -1,6 +1,6 @@
 # GAC — Gestão de Ativos CCT
 
-<img src="Requisitos/VisaoDemanda/image/logo_projeto_GAC.png" width="20%">
+<img src="Requisitos/image/logo_projeto_GAC.png" width="20%">
 
 ## 📌 Sobre o Projeto
 

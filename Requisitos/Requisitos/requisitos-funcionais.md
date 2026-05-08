@@ -1,12 +1,14 @@
 # Requisitos Funcionais
 
-## 1. Introdução
+# 1. Introdução
 
 Este documento apresenta os requisitos funcionais da plataforma GAC (Gestão de Ativos CCT), responsável pelo controle, rastreamento e gerenciamento de projetores através de identificação digital por tags NFC/RFID.
 
 ---
 
-## 2. Requisitos Funcionais
+# 2. Requisitos Funcionais
+
+## 2.1 Cadastro e Identificação de Projetores
 
 ### RF01 - Cadastro de projetores
 
@@ -15,25 +17,34 @@ O sistema deve permitir cadastrar projetores contendo:
 - Número de patrimônio
 - Modelo
 - Marca
+- Estado atual
 - Localização
-- Estado do equipamento
-- Identificação por tag NFC/RFID
+- Código identificador da tag NFC/RFID
 
 **Prioridade:** Alta  
-**Atores:** Administrador
+**Atores:** Atendente, Administrador
 
 ---
 
-### RF02 - Atualização de dados de projetores
+### RF02 - Vinculação de tag NFC/RFID
 
-O sistema deve permitir atualizar informações cadastrais dos projetores.
+O sistema deve permitir associar uma tag NFC/RFID única a cada projetor cadastrado.
+
+**Prioridade:** Alta  
+**Atores:** Atendente
+
+---
+
+### RF03 - Atualização de dados de projetores
+
+O sistema deve permitir editar informações cadastrais dos projetores.
 
 **Prioridade:** Média  
 **Atores:** Administrador
 
 ---
 
-### RF03 - Inativação de projetores
+### RF04 - Inativação de projetores
 
 O sistema deve permitir inativar projetores fora de uso ou indisponíveis.
 
@@ -42,7 +53,7 @@ O sistema deve permitir inativar projetores fora de uso ou indisponíveis.
 
 ---
 
-### RF04 - Consulta de projetores
+### RF05 - Consulta de projetores
 
 O sistema deve permitir consultar projetores cadastrados utilizando filtros.
 
@@ -51,52 +62,60 @@ O sistema deve permitir consultar projetores cadastrados utilizando filtros.
 
 ---
 
-### RF05 - Rastreamento de projetores
+## 2.2 Alocação e Empréstimo de Projetores
 
-O sistema deve permitir visualizar a localização atual do projetor.
+### RF06 - Leitura de tag para alocação
+
+O sistema deve permitir identificar automaticamente um projetor através da aproximação do dispositivo móvel à tag NFC/RFID.
+
+**Prioridade:** Alta  
+**Atores:** Professor, Atendente
+
+---
+
+### RF07 - Exibição de dados do projetor
+
+Após a leitura da tag, o sistema deve exibir:
+
+- Identificação do projetor
+- Estado atual
+- Localização
+- Disponibilidade
+- Informações de uso
+
+**Prioridade:** Alta  
+**Atores:** Professor, Atendente
+
+---
+
+### RF08 - Solicitação de alocação
+
+O sistema deve permitir que o professor solicite a alocação do projetor identificado pela tag NFC/RFID.
+
+**Prioridade:** Alta  
+**Atores:** Professor
+
+---
+
+### RF09 - Confirmação de alocação
+
+O sistema deve permitir que o atendente confirme ou rejeite a solicitação de alocação do projetor.
 
 **Prioridade:** Alta  
 **Atores:** Atendente
 
 ---
 
-### RF06 - Histórico de movimentações
+### RF10 - Atualização de status do projetor
 
-O sistema deve permitir consultar o histórico de movimentações realizadas pelos projetores.
+Após confirmação da alocação, o sistema deve atualizar automaticamente o status do projetor para "Em uso".
 
 **Prioridade:** Alta  
-**Atores:** Administrador
+**Atores:** Sistema
 
 ---
 
-### RF07 - Leitura de tag NFC/RFID
-
-O sistema deve permitir identificar rapidamente um projetor através da leitura da tag NFC/RFID.
-
-**Prioridade:** Alta  
-**Atores:** Atendente
-
----
-
-### RF08 - Registro de empréstimo
-
-O sistema deve permitir registrar empréstimos de projetores para usuários autorizados.
-
-**Prioridade:** Alta  
-**Atores:** Atendente
-
----
-
-### RF09 - Registro de devolução
-
-O sistema deve permitir registrar devoluções de projetores e atualizar seus estados.
-
-**Prioridade:** Alta  
-**Atores:** Atendente
-
----
-
-### RF10 - Consulta de disponibilidade
+### RF11 - Consulta de disponibilidade
 
 O sistema deve permitir consultar projetores disponíveis para empréstimo.
 
@@ -105,25 +124,27 @@ O sistema deve permitir consultar projetores disponíveis para empréstimo.
 
 ---
 
-### RF11 - Registro de manutenção
+## 2.3 Devolução e Realocação
 
-O sistema deve permitir registrar manutenções preventivas e corretivas dos projetores.
+### RF12 - Registro de devolução
 
-**Prioridade:** Média  
-**Atores:** Técnico, Administrador
+O sistema deve permitir registrar a devolução de um projetor através da leitura da tag NFC/RFID.
 
----
-
-### RF12 - Consulta de status de manutenção
-
-O sistema deve permitir consultar o status de manutenção dos projetores.
-
-**Prioridade:** Média  
-**Atores:** Professor, Atendente
+**Prioridade:** Alta  
+**Atores:** Atendente
 
 ---
 
-### RF13 - Realocação de projetores
+### RF13 - Atualização após devolução
+
+Após a devolução, o sistema deve atualizar o status do projetor para "Disponível".
+
+**Prioridade:** Alta  
+**Atores:** Sistema
+
+---
+
+### RF14 - Realocação de projetores
 
 O sistema deve permitir registrar a transferência de projetores entre salas ou setores.
 
@@ -132,16 +153,82 @@ O sistema deve permitir registrar a transferência de projetores entre salas ou 
 
 ---
 
-### RF14 - Troca de projetor defeituoso
+## 2.4 Manutenção e Substituição
 
-O sistema deve permitir substituir projetores defeituosos por outros disponíveis.
+### RF15 - Registro de defeito
+
+O sistema deve permitir registrar defeitos identificados nos projetores.
 
 **Prioridade:** Média  
 **Atores:** Atendente
 
 ---
 
-### RF15 - Autenticação de usuários
+### RF16 - Encaminhamento para manutenção
+
+O sistema deve permitir alterar o status do projetor para "Em manutenção".
+
+**Prioridade:** Média  
+**Atores:** Atendente, Administrador
+
+---
+
+### RF17 - Consulta de status de manutenção
+
+O sistema deve permitir consultar o status de manutenção dos projetores.
+
+**Prioridade:** Média  
+**Atores:** Professor, Atendente
+
+---
+
+### RF18 - Troca de projetor defeituoso
+
+O sistema deve permitir disponibilizar outro projetor ao professor em caso de defeito do equipamento alocado.
+
+**Prioridade:** Média  
+**Atores:** Atendente
+
+---
+
+## 2.5 Rastreamento e Auditoria
+
+### RF19 - Histórico de movimentações
+
+O sistema deve armazenar histórico completo de:
+
+- empréstimos
+- devoluções
+- trocas
+- realocações
+- manutenções
+
+**Prioridade:** Alta  
+**Atores:** Administrador
+
+---
+
+### RF20 - Consulta de localização
+
+O sistema deve permitir consultar a localização atual do projetor.
+
+**Prioridade:** Alta  
+**Atores:** Atendente, Administrador
+
+---
+
+### RF21 - Geração de relatórios
+
+O sistema deve permitir gerar relatórios de movimentações, empréstimos e manutenções.
+
+**Prioridade:** Média  
+**Atores:** Administrador
+
+---
+
+## 2.6 Acesso e Segurança
+
+### RF22 - Autenticação de usuários
 
 O sistema deve permitir autenticação de usuários através de login e senha.
 
@@ -150,18 +237,9 @@ O sistema deve permitir autenticação de usuários através de login e senha.
 
 ---
 
-### RF16 - Controle de permissões
+### RF23 - Controle de permissões
 
 O sistema deve controlar permissões conforme o perfil do usuário.
 
 **Prioridade:** Alta  
 **Atores:** Sistema
-
----
-
-### RF17 - Geração de relatórios
-
-O sistema deve permitir gerar relatórios de movimentações, empréstimos e manutenções.
-
-**Prioridade:** Média  
-**Atores:** Administrador

@@ -90,7 +90,8 @@ A plataforma GAC permitirá:
 | Nome       | Função                         |
 | ---------- | ------------------------------ |
 | João Pedro | Desenvolvimento e documentação |
-| Grupo01    | Equipe de desenvolvimento      |
+| Igor | - |
+| Asafe | - |
 
 ---
 

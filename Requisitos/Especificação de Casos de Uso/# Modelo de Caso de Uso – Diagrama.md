@@ -146,15 +146,60 @@ No diagrama são representadas relações de reuso entre casos de uso, seguindo 
 
 Essas relações serão detalhadas posteriormente em cada especificação de caso de uso (CDU), indicando os pontos de inclusão e extensão no fluxo.
 
-## 7. Relação com requisitos funcionais e não funcionais
+## 7. Arquitetura da Demanda
 
-- **Requisitos funcionais:**  
-  - Todos os casos de uso F1.1 a F8.2 definidos na Visão da Demanda estão presentes e associados aos atores corretos.
-- **Requisitos não funcionais:**  
-  - Não são representados graficamente no diagrama, conforme a técnica de casos de uso, mas são considerados nos demais artefatos (Visão da Demanda e futuras especificações de casos de uso), especialmente quanto a:
-    - Rastreabilidade em tempo real;  
-    - Segurança e controle de permissões;  
-    - Centralização e integridade dos dados.
+O sistema GAC será implantado como uma **plataforma web centralizada**, acessada via navegador pelos diferentes perfis de usuários (professores, atendentes e administradores) e integrada a leitores NFC/RFID para identificação dos projetores.
+
+Em alto nível, a solução é composta pelos seguintes elementos:
+
+- **Dispositivos dos Usuários (Professores, Atendentes e Administradores)**  
+  - Acessam o sistema através de um **cliente web** (navegador), que fornece:
+    - interface para consulta de disponibilidade e status de projetores;  
+    - interface para registro de empréstimos e devoluções;  
+    - interface administrativa para cadastro, atualização, inativação e transferência de projetores;  
+    - acesso a relatórios de movimentações e manutenção.
+
+- **Servidor de Aplicação – Backend do GAC (GAC-Core / API REST)**  
+  - Responsável pelo **processamento das regras de negócio** do sistema, incluindo:
+    - gerenciamento de cadastro e inventário de projetores (F1.x);  
+    - rastreamento, localização e histórico de movimentações (F2.x);  
+    - registro e consulta de manutenções (F3.x);  
+    - controle de empréstimos, devoluções e trocas de projetores (F4.x, F6.1);  
+    - transferência de projetores entre salas/setores (F5.1);  
+    - autenticação de usuários e aplicação de permissões (F7.x);  
+    - fornecimento de dados para relatórios (F8.x).  
+  - Expõe uma **API REST** consumida pelas interfaces web dos usuários.
+
+- **Servidor de Banco de Dados**  
+  - Hospeda o **banco de dados relacional do GAC**, responsável por armazenar:
+    - dados cadastrais dos projetores;  
+    - registros de empréstimos, devoluções e transferências;  
+    - histórico de movimentações;  
+    - informações de manutenção;  
+    - dados de usuários e perfis de acesso;  
+    - informações utilizadas na geração de relatórios.  
+  - Garante a **centralização, integridade e rastreabilidade** das informações.
+
+- **Serviço de Autenticação e Controle de Acesso**  
+  - Componente responsável por **validar credenciais** de usuários e informar perfis/permissões ao backend.  
+  - Dá suporte direto às funcionalidades de autenticação e controle de permissões (F7.1 e F7.2).
+
+- **Módulo de Relatórios**  
+  - Componente responsável por **gerar relatórios** de movimentações e manutenção com base nos dados armazenados no banco.  
+  - Atende às funcionalidades F8.1 (relatório de movimentações) e F8.2 (relatório de manutenção), acessadas principalmente pelo Administrador de Inventário.
+
+- **Leitor NFC/RFID e Adaptador de Integração**  
+  - Em estações específicas, um **leitor NFC/RFID** é utilizado para identificar projetores por meio de tags associadas a cada equipamento (F2.3).  
+  - Um adaptador de integração no backend recebe os dados lidos pelo leitor e os relaciona aos registros do banco, apoiando a localização, o histórico e as operações de empréstimo/devolução.
+
+De forma resumida, a arquitetura da demanda do GAC prevê:
+
+- um **frontend web** para interação dos diferentes atores;  
+- um **backend central (API REST)** responsável pelas regras de negócio;  
+- um **banco de dados relacional único** para persistência e histórico;  
+- serviços de **autenticação**, **relatórios** e **integração com leitores NFC/RFID**.
+
+Essa visão arquitetural é detalhada e refinada nos diagramas de **casos de uso**, **componentes** e **implantação** do sistema GAC.
 
 ## 8. Checklist de validação deste artefato
 

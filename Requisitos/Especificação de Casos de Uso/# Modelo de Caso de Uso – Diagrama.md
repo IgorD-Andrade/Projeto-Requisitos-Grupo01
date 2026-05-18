@@ -24,7 +24,7 @@ de modo que seja possível:
 
 A figura a seguir apresenta o diagrama de casos de uso do sistema GAC.
 
-![GAC - Diagrama de Casos de Uso](WhatsApp_Image_20260516_at_112358.jpeg)
+![GAC - Diagrama de Casos de Uso](Diagrama_de_casos_de_uso.jpeg)
 
 **Legenda de arquitetura (contexto da solução):**
 

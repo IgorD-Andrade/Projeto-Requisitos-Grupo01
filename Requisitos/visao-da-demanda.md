@@ -265,14 +265,175 @@ Cada ativo será associado a uma tag de identificação (NFC/RFID), permitindo r
 
 ## 7. Arquitetura da Demanda
 
-O sistema será composto por uma plataforma web centralizada, acessada por diferentes perfis de usuários (professores, atendentes e administradores). Além da plataforma web, o sistema utilizará identificação digital por tags NFC/RFID acopladas aos ativos, permitindo integração entre os equipamentos físicos e o sistema de rastreamento.
+O sistema GAC será implantado como uma **plataforma web centralizada**, acessada via navegador pelos diferentes perfis de usuários (professores, atendentes e administradores) e integrada a leitores NFC/RFID para identificação dos projetores.
 
-A aplicação contará com:
+Em alto nível, a solução é composta por:
 
-- Interface para registro e consulta de ativos
-- Backend responsável pelo processamento e armazenamento de dados
-- Banco de dados centralizado para garantir integridade e histórico
+- **Frontend web** nos dispositivos dos usuários, para interação com o sistema;
+- **Backend central (API REST)** responsável pelas regras de negócio;
+- **Banco de dados relacional único**, para persistência e histórico das informações;
+- Serviços de **autenticação**, **relatórios** e **integração com leitores NFC/RFID**.
 
+Essa visão é detalhada nos diagramas UML apresentados na subseção a seguir.
+
+### 7.1. Diagramas UML
+
+A arquitetura e a estrutura da solução GAC são representadas por três diagramas UML:
+
+- o **Diagrama de Caso de Uso**, que mostra os atores e as funcionalidades (F1.1 a F8.2);
+- o **Diagrama de Componentes**, que mostra como as funcionalidades são agrupadas em módulos de software;
+- o **Diagrama de Implantação**, que mostra como esses módulos são distribuídos nos ambientes de execução (dispositivos, servidores e nuvem).
+
+#### 7.1.1. Diagrama de Caso de Uso
+
+O diagrama de casos de uso do GAC ilustra os atores e as principais interações com o sistema, garantindo a cobertura de todas as funcionalidades definidas na seção 6.
+
+![GAC – Diagrama de Casos de Uso](Diagrama_de_casos_de_uso.jpeg)
+
+**Atores principais:**
+
+- Professor Solicitante  
+- Atendente Validador  
+- Administrador de Inventário  
+- Técnico  
+- Sistema (controle de permissões)
+
+**Grupos de casos de uso (funcionalidades):**
+
+- **F1.x – Gerenciar cadastro de projetores**  
+  Cadastro, atualização, inativação e consulta de projetores.
+
+- **F2.x – Rastrear projetores**  
+  Localização, histórico de movimentações e leitura de tags NFC/RFID.
+
+- **F3.x – Gerenciar manutenção de projetores**  
+  Registro de manutenção e consulta de status.
+
+- **F4.x e F6.1 – Gerenciar empréstimos e troca de projetores**  
+  Registro de empréstimo, devolução, consulta de disponibilidade e troca de projetor com defeito.
+
+- **F5.1 – Realocar projetores**  
+  Transferência de projetores entre salas/setores.
+
+- **F7.x – Acesso e segurança**  
+  Autenticação de usuários e controle de permissões.
+
+- **F8.x – Relatórios e auditoria**  
+  Relatórios de movimentações e de manutenção.
+
+Esse diagrama garante que todas as necessidades da Visão da Demanda estão associadas aos atores corretos.
+
+#### 7.1.2. Diagrama de Componentes
+
+O diagrama de componentes descreve os principais **módulos de software** do GAC e suas dependências, mostrando a arquitetura lógica da solução.
+
+![GAC – Diagrama de Componentes](Diagrama_de_componentes.png)
+
+**Componentes de frontend:**
+
+- **GAC-InterfaceProfessor (Frontend)**  
+  Interface web usada pelo Professor Solicitante, focada em:
+  - consulta de disponibilidade de projetores (F4.3);
+  - consulta de status de manutenção (F3.2).
+
+- **GAC-InterfaceAdministrativa (Frontend)**  
+  Interface web para Administrador de Inventário e Atendente Validador, apoiando:
+  - gestão de projetores (F1.x);
+  - rastreamento e histórico (F2.x);
+  - empréstimos, devoluções e trocas (F4.x, F6.1);
+  - geração de relatórios (F8.x).
+
+**Componentes de backend / API REST:**
+
+- **GAC-ModuloEmprestimos (Backend/REST)**  
+  Implementa regras de negócio de:
+  - rastreamento e localização (F2.1, F2.2);
+  - leitura de tag NFC/RFID em conjunto com o adaptador (F2.3);
+  - registro de empréstimos e devoluções (F4.1, F4.2);
+  - consulta de disponibilidade (F4.3);
+  - troca de projetor com defeito (F6.1).
+
+- **GAC-ModuloInventario&Manutencao (Backend/REST)**  
+  Implementa regras de:
+  - cadastro, atualização, inativação e consulta de projetores (F1.x);
+  - registro e consulta de manutenções (F3.x);
+  - transferência de projetores entre salas/setores (F5.1);
+  - apoio à geração de relatórios (F8.x).
+
+- **GAC-BancoDeDados**  
+  Responsável pela persistência dos dados do GAC:
+  - projetores, movimentações, manutenções, usuários e perfis;
+  - base para relatórios de movimentação e manutenção.
+
+**Componentes de integração e serviços externos:**
+
+- **GAC-AdaptadorNFC-RFID**  
+  Adaptador que integra o backend ao leitor/sistema NFC/RFID, recebendo leituras de tags e associando aos projetores (F2.3).
+
+- **LeitorNFC-RFID-SistemaExterno**  
+  Componente externo que realiza a leitura física das tags NFC/RFID.
+
+- **Serviço de Autenticação / Controle de Acesso**  
+  Responsável por autenticar usuários e informar perfis e permissões ao backend (apoio a F7.1 e F7.2).
+
+- **Módulo de Relatórios**  
+  Componente que gera relatórios de movimentação e manutenção (F8.1, F8.2), consumindo dados do banco.
+
+Esse diagrama mostra como as funcionalidades F1.x a F8.x foram distribuídas em módulos coesos, alinhados com a Visão da Demanda.
+
+#### 7.1.3. Diagrama de Implantação
+
+O diagrama de implantação representa como os componentes do GAC são distribuídos nos **ambientes de execução** (dispositivos, servidores e nuvem), evidenciando a infraestrutura necessária para operar a solução.
+
+![GAC – Diagrama de Implantação](Diagrama_de_Implantacao.png)
+
+**Ambientes e nós principais:**
+
+- **Dispositivos dos Usuários (Professores, Atendentes, Administradores)**  
+  - Executam o cliente web GAC no navegador (`ClienteWebGAC.js`).  
+  - Em estações específicas, executam uma variação integrada ao leitor (`ClienteAutowGAC.js`) para leitura automática de tags NFC/RFID (F2.3).
+
+- **Servidor de Aplicação – GAC-Core (Backend / API REST)**  
+  - Hospeda os módulos de backend (`GAC-ModuloEmprestimos` e `GAC-ModuloInventario&Manutencao`).  
+  - Processa as regras de negócio ligadas a:
+    - empréstimos, devoluções, rastreamento e troca de projetores (F2.x, F4.x, F6.1);
+    - cadastro, atualização, inativação e transferência de projetores (F1.x, F5.1);
+    - manutenção (F3.x);
+    - autenticação/autorização (F7.x);
+    - relatórios (F8.x).  
+  - Acessa o banco de dados e orquestra chamadas ao serviço de autenticação e ao módulo de relatórios.
+
+- **Servidor de Banco de Dados (GAC_DB)**  
+  - Banco de dados relacional (por exemplo, AWS RDS) que armazena:
+    - cadastros de projetores;
+    - movimentações e histórico (empréstimos, devoluções, transferências);
+    - registros de manutenção;
+    - dados de usuários e perfis;
+    - informações usadas em relatórios.
+
+- **Servidor de Relatório**  
+  - Serviço ou nó dedicado à geração de relatórios administrativos.  
+  - Consome dados do `GAC_DB` para produzir:
+    - relatórios de movimentações (F8.1);
+    - relatórios de manutenção (F8.2).  
+  - É acionado pelo backend quando o usuário solicita relatórios via interface administrativa.
+
+- **Servidor de Autenticação Externa**  
+  - Serviço responsável por autenticação de usuários (`ServicoAutenticacao`).  
+  - Valida credenciais (F7.1) e fornece perfis/permissões para que o backend aplique o controle de acesso (F7.2).
+
+- **Dispositivo com Leitor NFC/RFID**  
+  - Estação que possui leitor NFC/RFID conectado ao cliente web.  
+  - Permite leitura das tags associadas aos projetores (F2.3), enviando os dados para o backend `GAC-Core`, que resolve localização, histórico e demais ações.
+
+**Comunicação entre nós (resumo):**
+
+- Os dispositivos dos usuários se comunicam com o **Servidor de Aplicação – GAC-Core** via HTTP/HTTPS.  
+- O backend acessa o **Servidor de Banco de Dados** para leitura/gravação.  
+- O backend consome o **Serviço de Autenticação** e o **Servidor de Relatório** conforme necessário.  
+- As estações com leitor NFC/RFID enviam as leituras ao backend, por meio do cliente web integrado.
+
+Essa arquitetura de implantação está alinhada à proposta de uma solução **web centralizada**, com banco de dados único e integração com dispositivos NFC/RFID, conforme descrito na Visão da Demanda.
 ## Checklist de Validação do Documento de Visão
 
 - [x] O objetivo está claro e alinhado ao problema/necessidade

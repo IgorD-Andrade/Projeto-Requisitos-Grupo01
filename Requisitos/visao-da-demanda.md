@@ -77,6 +77,12 @@ Cada ativo será associado a uma tag de identificação (NFC/RFID), permitindo r
 - **Descrição:** Responsável pela gestão geral dos ativos.
 - **Objetivo:** Manter a base de dados atualizada e confiável, além de gerar relatórios.
 
+### 5.4 Administrador de Inventário
+
+- **Descrição:** Responsável por Registrar Manutenções e Controle de permissões.
+- **Objetivo:** Manter o sistema operando.
+
+
 ---
 
 ## 6. Necessidades e Funcionalidades

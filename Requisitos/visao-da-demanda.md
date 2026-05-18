@@ -259,96 +259,13 @@ Cada ativo será associado a uma tag de identificação (NFC/RFID), permitindo r
 
 ## 7. Arquitetura da Demanda
 
-O sistema GAC será implantado como uma **plataforma web centralizada**, acessada via navegador pelos diferentes perfis de usuários (professores, atendentes e administradores) e integrada a leitores NFC/RFID para identificação dos projetores.
+O sistema será composto por uma plataforma web centralizada, acessada por diferentes perfis de usuários (professores, atendentes e administradores). Além da plataforma web, o sistema utilizará identificação digital por tags NFC/RFID acopladas aos ativos, permitindo integração entre os equipamentos físicos e o sistema de rastreamento.
 
-Em alto nível, a solução é composta por:
+A aplicação contará com:
 
-- **Frontend web** nos dispositivos dos usuários, para interação com o sistema;
-- **Backend central (API REST)** responsável pelas regras de negócio;
-- **Banco de dados relacional único**, para persistência e histórico;
-- Serviços de **autenticação**, **relatórios** e **integração com leitores NFC/RFID**.
-
-### 7.1. Diagramas UML
-
-A arquitetura e a estrutura da solução GAC são detalhadas por meio de diagramas UML, que representam:
-
-- o **comportamento** do sistema do ponto de vista dos usuários (casos de uso);
-- a **organização interna em módulos de software** (componentes);
-- a **distribuição física** desses módulos em servidores, nuvem e dispositivos (implantação).
-
-#### 7.1.1. Diagrama de Caso de Uso
-
-**Atores principais:**
-
-- Professor Solicitante  
-- Atendente Validador  
-- Administrador de Inventário  
-- Técnico  
-- Sistema (controle de permissões)
-
-**Principais grupos de casos de uso:**
-
-- **Gerenciar cadastro de projetores (F1.x)**  
-  Cadastrar, atualizar, inativar e consultar projetores.
-
-- **Rastrear projetores (F2.x)**  
-  Localizar projetor, consultar histórico de movimentação e realizar leitura de tags NFC/RFID.
-
-- **Gerenciar manutenção (F3.x)**  
-  Registrar manutenção e consultar status de manutenção.
-
-- **Gerenciar empréstimos (F4.x, F6.1)**  
-  Registrar aluguel/empréstimo, registrar devolução, consultar disponibilidade e trocar projetor com defeito.
-
-- **Realocar projetores (F5.1)**  
-  Transferir projetor entre salas/setores.
-
-- **Acesso e segurança (F7.x)**  
-  Autenticação de usuários e controle de permissões.
-
-- **Relatórios e auditoria (F8.x)**  
-  Gerar relatórios de movimentações e de manutenção.
-
-Esse diagrama garante que todas as funcionalidades levantadas na Visão da Demanda estão associadas aos atores corretos.
-
-#### 7.1.2. Diagrama de Componentes
-
-**Componentes principais de frontend:**
-
-- **GAC-InterfaceProfessor (Frontend)**  
-  Interface web voltada ao Professor Solicitante, permitindo principalmente consultar disponibilidade de projetores (F4.3) e status de manutenção (F3.2).
-
-- **GAC-InterfaceAdministrativa (Frontend)**  
-  Interface web para o Administrador de Inventário e Atendente Validador, apoiando:
-  - gestão de projetores (F1.x);  
-  - rastreamento e histórico (F2.x);  
-  - empréstimos e devoluções (F4.x, F6.1);  
-  - relatórios (F8.x).
-
-**Componentes principais de backend / API REST:**
-
-- **GAC-ModuloEmprestimos (Backend/REST)**  
-  Implementa as regras de negócio relacionadas a:
-  - rastreio e localização de projetores (F2.1, F2.2);  
-  - leitura de tag NFC/RFID em conjunto com o adaptador (F2.3);  
-  - registro de empréstimos e devoluções (F4.1, F4.2);  
-  - consulta de disponibilidade (F4.3);  
-  - troca de projetor com defeito (F6.1).
-
-- **GAC-ModuloInventario&Manutencao (Backend/REST)**  
-  Implementa as regras de negócio de:
-  - gerenciamento de cadastro e inventário de projetores (F1.x);  
-  - registro e consulta de manutenções (F3.x);  
-  - transferência de projetores entre salas/setores (F5.1);  
-  - apoio à geração de relatórios (F8.x).
-
-- **GAC-BancoDeDados**  
-  Responsável pela persistência de:
-  - dados de projetores;  
-  - movimentações, empréstimos, devoluções e transferências;  
-  - registros de manutenção;  
-  - dados de usuários e perfis;  
-  - informações usadas para relatórios.
+- Interface para registro e consulta de ativos
+- Backend responsável pelo processamento e armazenamento de dados
+- Banco de dados centralizado para garantir integridade e histórico
 
 ## Checklist de Validação do Documento de Visão
 

@@ -1,6 +1,5 @@
 # Diagrama de Componentes do Sistema GAC
 
-Última atualização em 18/05/2026  
 
 ## 1. Objetivo do artefato
 

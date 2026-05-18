@@ -288,7 +288,7 @@ A arquitetura e a estrutura da solução GAC são representadas por três diagra
 
 O diagrama de casos de uso do GAC ilustra os atores e as principais interações com o sistema, garantindo a cobertura de todas as funcionalidades definidas na seção 6.
 
-<img src="Especificação de Casos de Uso/Diagrama_de_casos_de_uso.jpeg" width="20%">
+<img src="Especificação de Casos de Uso/Diagrama_de_casos_de_uso.jpeg" width="80%">
 
 **Atores principais:**
 
@@ -327,7 +327,7 @@ Esse diagrama garante que todas as necessidades da Visão da Demanda estão asso
 
 O diagrama de componentes descreve os principais **módulos de software** do GAC e suas dependências, mostrando a arquitetura lógica da solução.
 
-![GAC – Diagrama de Componentes](Diagrama_de_componentes.png)
+<img src="Especificação de Casos de Uso/Diagrama_de_componentes.png" width="80%">
 
 **Componentes de frontend:**
 
@@ -385,7 +385,7 @@ Esse diagrama mostra como as funcionalidades F1.x a F8.x foram distribuídas em 
 
 O diagrama de implantação representa como os componentes do GAC são distribuídos nos **ambientes de execução** (dispositivos, servidores e nuvem), evidenciando a infraestrutura necessária para operar a solução.
 
-![GAC – Diagrama de Implantação](Diagrama_de_Implantacao.png)
+<img src="Especificação de Casos de Uso/Diagrama_de_Implantacao.png" width="80%">
 
 **Ambientes e nós principais:**
 

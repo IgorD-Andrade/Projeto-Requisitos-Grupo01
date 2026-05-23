@@ -290,12 +290,6 @@ O diagrama de casos de uso do GAC ilustra os atores e as principais interações
 
 <img src="Especificação de Casos de Uso/Diagrama_de_casos_de_uso.jpeg" width="80%">
 
-#### 7.1.1. Diagrama de Caso de Uso
-
-O diagrama de casos de uso do GAC ilustra os atores e as principais interações com o sistema, garantindo a cobertura de todas as funcionalidades definidas na seção 6.
-
-<img src="Especificação de Casos de Uso/Diagrama_de_casos_de_uso.jpeg" width="80%">
-
 **Atores principais:**
 
 - Professor

@@ -200,7 +200,7 @@ Cada ativo será associado a uma tag de identificação (NFC/RFID), permitindo r
 
 - **Descrição:** Permite registrar mudança de localização do projetor.
 - **Incluída**
-- **Atores:** Administrador
+- **Atores:** Professor
 - **Frequência:** Média
 - **Valor:** Médio
 

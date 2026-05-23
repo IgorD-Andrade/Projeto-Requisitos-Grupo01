@@ -65,7 +65,7 @@ Cada ativo será associado a uma tag de identificação (NFC/RFID), permitindo r
 ### 5.1 Professor Solicitante
 
 - **Descrição:** Professor que necessita utilizar equipamentos para atividades acadêmicas.
-- **Objetivo:** Localizar e retirar ativos de forma rápida e confiável.
+- **Objetivo:** Localizar, retirar e Transferir ativos de forma rápida e confiável.
 
 ### 5.2 Atendente Validador
 
@@ -76,11 +76,6 @@ Cada ativo será associado a uma tag de identificação (NFC/RFID), permitindo r
 
 - **Descrição:** Responsável pela gestão geral dos ativos.
 - **Objetivo:** Manter a base de dados atualizada e confiável, além de gerar relatórios.
-
-### 5.4 Administrador de Inventário
-
-- **Descrição:** Responsável por Registrar Manutenções e Controle de permissões.
-- **Objetivo:** Manter o sistema operando.
 
 
 ---

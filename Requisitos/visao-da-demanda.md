@@ -290,13 +290,17 @@ O diagrama de casos de uso do GAC ilustra os atores e as principais interações
 
 <img src="Especificação de Casos de Uso/Diagrama_de_casos_de_uso.jpeg" width="80%">
 
+#### 7.1.1. Diagrama de Caso de Uso
+
+O diagrama de casos de uso do GAC ilustra os atores e as principais interações com o sistema, garantindo a cobertura de todas as funcionalidades definidas na seção 6.
+
+<img src="Especificação de Casos de Uso/Diagrama_de_casos_de_uso.jpeg" width="80%">
+
 **Atores principais:**
 
-- Professor Solicitante  
-- Atendente Validador  
-- Administrador de Inventário  
-- Técnico  
-- Sistema (controle de permissões)
+- Professor
+- Atendente Validador
+- Administrador de Inventário
 
 **Grupos de casos de uso (funcionalidades):**
 
@@ -313,15 +317,13 @@ O diagrama de casos de uso do GAC ilustra os atores e as principais interações
   Registro de empréstimo, devolução, consulta de disponibilidade e troca de projetor com defeito.
 
 - **F5.1 – Realocar projetores**  
-  Transferência de projetores entre salas/setores.
+  Transferência de projetores entre salas/setores e entre professores.
 
 - **F7.x – Acesso e segurança**  
   Autenticação de usuários e controle de permissões.
 
 - **F8.x – Relatórios e auditoria**  
   Relatórios de movimentações e de manutenção.
-
-Esse diagrama garante que todas as necessidades da Visão da Demanda estão associadas aos atores corretos.
 
 #### 7.1.2. Diagrama de Componentes
 

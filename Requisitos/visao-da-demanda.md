@@ -7,6 +7,7 @@
 | 29/04/2026 | 1.0 | Criação inicial do documento de visão da demanda do sistema GAC | João Pedro |
 | 30/04/2026 | 1.1 | Adição da parte interessada para tratar o domínio de negócio | João Pedro |
 | 08/05/2026 | 1.2 | Levantamento das necessidades e funcionalidades do sistema | João Pedro |
+| 22/05/2026 | 1.2 | Adição do diagrama de casos de uso, diagrama de implantação e diagrama de componenes | Igor |
 
 ---
 

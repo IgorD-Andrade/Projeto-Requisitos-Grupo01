@@ -192,7 +192,7 @@ Cada ativo será associado a uma tag de identificação (NFC/RFID), permitindo r
 - **Frequência:** Alta
 - **Valor:** Alto
 
-#### F4.4 Confirmar recebimento de projetor
+#### F4.4 Confirmar recebimento de projetor pela leitura da tag
 
 - **Descrição:** Permite ao professor confirmar o recebimento e a responsabilidade pelo projetor através da leitura da tag NFC/RFID associada ao equipamento.
 - **Incluída**

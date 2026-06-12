@@ -135,4 +135,4 @@ Requisitos/
 
 # 📌 Status do Projeto
 
-🚧 Em desenvolvimento — Sprint 2
+🚧 Em desenvolvimento — Sprint 4

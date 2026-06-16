@@ -87,52 +87,29 @@ A plataforma GAC permitirá:
 
 # 👥 Equipe
 
-| Nome       | Função                         |
-| ---------- | ------------------------------ |
-| João Pedro | Desenvolvimento e documentação |
-| Igor | Desenvolvimento e documentação |
-| Asafe | Desenvolvimento e documentação |
+| Nome        | Função                         |
+| ----------- | ------------------------------ |
+| João Pedro  | Desenvolvimento e documentação |
+| Igor        | Desenvolvimento e documentação |
+| Asafe       | Desenvolvimento e documentação |
 
 ---
 
 # 📂 Estrutura do Projeto
 
 ```text
-Requisitos/
-├── VisaoDemanda/
-│   ├── visao-da-demanda.md
-│   └── image/
-│
+.
+├── pitch.html                    <-- Apresentação Executiva (Pitch) do Projeto
 ├── Requisitos/
-│   ├── requisitos-funcionais.md
-│   ├── requisitos-nao-funcionais.md
-│   └── regras-de-negocio.md
-│
-├── Diagramas/
-│
-└── CasosDeUso/
-```
-
----
-
-# 📄 Documentação
-
-* [Visão da Demanda](./Requisitos/VisaoDemanda/visao-da-demanda.md)
-* [Requisitos Funcionais](./Requisitos/Requisitos/requisitos-funcionais.md)
-* [Requisitos Não Funcionais](./Requisitos/Requisitos/requisitos-nao-funcionais.md)
-* [Regras de Negócio](./Requisitos/Requisitos/regras-de-negocio.md)
-
----
-
-# 🚀 Tecnologias Utilizadas
-
-* Markdown
-* Git/GitHub
-* NFC/RFID
-* Aplicação Web
-
----
-
-# 📌 Status do Projeto
-
-🚧 Em desenvolvimento — Sprint 4
+│   ├── VisaoDemanda/
+│   │   ├── visao-da-demanda.md
+│   │   └── image/
+│   │
+│   ├── Requisitos/
+│   │   ├── requisitos-funcionais.md
+│   │   ├── requisitos-nao-funcionais.md
+│   │   └── regras-de-negocio.md
+│   │
+│   ├── Diagramas/
+│   │
+│   └── CasosDeUso/

@@ -99,7 +99,7 @@ A plataforma GAC permitirá:
 
 ```text
 .
-├── pitch.html                    <-- Apresentação Executiva (Pitch) do Projeto
+├── pitch_GAC.html                    <-- Apresentação Executiva (Pitch) do Projeto
 ├── Requisitos/
 │   ├── visao-da-demanda.md
 |   |

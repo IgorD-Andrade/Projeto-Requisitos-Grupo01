@@ -101,15 +101,28 @@ A plataforma GAC permitirá:
 .
 ├── pitch.html                    <-- Apresentação Executiva (Pitch) do Projeto
 ├── Requisitos/
-│   ├── VisaoDemanda/
-│   │   ├── visao-da-demanda.md
-│   │   └── image/
+│   ├── visao-da-demanda.md
+|   |
+│   ├── image/
 │   │
 │   ├── Requisitos/
-│   │   ├── requisitos-funcionais.md
 │   │   ├── requisitos-nao-funcionais.md
 │   │   └── regras-de-negocio.md
 │   │
 │   ├── Diagramas/
+|   |   ├── # Modelo de Caso de Uso.md
+|   |   ├── Diagrama de Implantacao.md
+|   |   ├── Diagrama_Componentes_GAC.md
+|   |   ├── Diagrama_de_Implantacao.png
+|   |   ├── Diagrama_de_casos_de_uso.jpg
+|   |   ├── Diagrama_de_componentes.png
 │   │
 │   └── CasosDeUso/
+|   |   ├── acesso_segurança/
+|   |   ├── emprestimo_projetor/
+|   |   ├── gerenciar_cadastro_projetor/
+|   |   ├── gerenciar_manutenção/
+|   |   ├── rastrear_projetor/
+|   |   ├── realocar_projetor/
+|   |   ├── relatorios_auditoria/
+|   |   ├── substituir_projetor/
